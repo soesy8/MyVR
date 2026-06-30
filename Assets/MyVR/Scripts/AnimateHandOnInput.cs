@@ -16,7 +16,7 @@ namespace MyVR
         public InputActionProperty pinchAnimationAction;
         public InputActionProperty gripAnimationAction;
 
-        //애니메이터 파라미터
+        //애니 파라미터
         private string grip = "Grip";
         private string trigger = "Trigger";
         #endregion
@@ -24,12 +24,13 @@ namespace MyVR
         #region Unity Event Method
         private void Awake()
         {
+            //참조
             animator = GetComponent<Animator>();
         }
 
         private void Update()
         {
-            //인풋처리
+            //인풋 처리
             float triggerValue = pinchAnimationAction.action.ReadValue<float>();
             float gripValue = gripAnimationAction.action.ReadValue<float>();
 
@@ -37,5 +38,6 @@ namespace MyVR
             animator.SetFloat(grip, gripValue);
         }
         #endregion
+
     }
 }
